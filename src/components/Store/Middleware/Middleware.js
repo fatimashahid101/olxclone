@@ -8,36 +8,36 @@ import {
     chatMember,
     userGet,
   } from "../Action/UserAction";
-  // import firebase from "firebase";
+   import firebase from "firebase";
   import { useState } from "react";
   export function LogIn(phoneNumber, email) {
     return (dispatch) => {
-      // firebase.auth().languageCode = "it";
-      // window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-      //   "sign-in-button",
-      //   {
-      //     size: "invisible",
-      //     callback: function (response) {
-      //       // reCAPTCHA solved, allow signInWithPhoneNumber.
-      //       onSignInSubmit();
-      //     },
-      //   }
-      // );
+  // firebase.auth().languageCode = "it";
+  //      window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+  //       "sign-in-button",
+  //       {
+  //         size: "invisible",
+  //         callback: function (response) {
+  //           // reCAPTCHA solved, allow signInWithPhoneNumber.
+  //           onSignInSubmit();
+  //         },
+  //       }
+  //     );
   
-      // var phoneNumber = phoneNumber;
-      // var appVerifier = window.recaptchaVerifier;
-      // firebase
-      //   .auth()
-      //   .signInWithPhoneNumber(phoneNumber, appVerifier)
-      //   .then(function (confirmationResult) {
-      //     // SMS sent. Prompt user to type the code from the message, then sign the
-      //     // user in with confirmationResult.confirm(code).
-      //     window.confirmationResult = confirmationResult;
-      //   })
-      //   .catch(function (error) {
-      //     // Error; SMS not sent
-      //     // ...
-      //   });
+  //     var phoneNumber = phoneNumber;
+  //     var appVerifier = window.recaptchaVerifier;
+  //     firebase
+  //       .auth()
+  //       .signInWithPhoneNumber(phoneNumber, appVerifier)
+  //       .then(function (confirmationResult) {
+  //         // SMS sent. Prompt user to type the code from the message, then sign the
+  //         // user in with confirmationResult.confirm(code).
+  //         window.confirmationResult = confirmationResult;
+  //       })
+  //       .catch(function (error) {
+  //         // Error; SMS not sent
+  //         // ...
+  //       });
       var provider = new firebase.auth.FacebookAuthProvider();
       let User = "";
       firebase
@@ -70,8 +70,8 @@ import {
           var credential = error.credential;
           // ...
         });
-      // if (User) {
-      // }
+      if (User) {
+      }
     };
   }
   export function logInGmail() {
@@ -113,7 +113,7 @@ import {
   export function postdata(postObj, key, imagesArr) {
     let path = [];
     return (dispatch) => {
-      // console.log(firebase.storage())
+      console.log(firebase.storage())
       for (let i = 0; i < imagesArr.length; i++) {
         firebase
           .storage()

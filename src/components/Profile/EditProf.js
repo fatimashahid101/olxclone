@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import firebase from "firebase";
+import firebase from "firebase";
 
 import { Input, TextArea, Label } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";

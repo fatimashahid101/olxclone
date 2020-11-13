@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import firebase from "firebase";
+ import firebase from "firebase";
 
 import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 import "./sell.scss";

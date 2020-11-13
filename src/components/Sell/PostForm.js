@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-// import firebase from "firebase";
+ import firebase from "firebase";
 
 import { Breadcrumb, Input } from "semantic-ui-react";
 import { makeStyles } from "@material-ui/core/styles";

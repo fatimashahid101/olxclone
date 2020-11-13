@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./App.css";
-// import firebase from "firebase";
+ import firebase from "firebase";
 
 import { firebaseConfig } from "./config";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
@@ -17,7 +17,7 @@ import SingleProd from "./components/SingleProd/SingleProd";
 import Message from "./components/Chat/Message";
 import Profile from "./components/Profile/Profile";
  import EditProf from "./components/Profile/EditProf";
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
   const App = ()=> {
   

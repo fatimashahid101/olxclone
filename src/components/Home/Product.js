@@ -5,7 +5,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getSingleData } from "../Store/Middleware/Middleware";
-// import firebase from "firebase";
+import firebase from "firebase";
 
 
  function Product (props) {

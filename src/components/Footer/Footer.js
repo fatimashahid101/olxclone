@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import "./Footer.scss";
 import appstore from "../../Images/appstore.webp"
 import playStore from "../../Images/playstore.webp"
-// import firebase from "firebase";
+import firebase from "firebase";
 
  function footer()
   {

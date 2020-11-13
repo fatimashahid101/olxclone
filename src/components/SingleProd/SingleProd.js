@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import firebase from "firebase";
+ import firebase from "firebase";
 
 import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 import "./SingleProd.scss";
@@ -9,7 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import truck from "./../../Images/truck.webp";
 import container from "./../../Images/container.webp";
 import { Breadcrumb, Icon } from "semantic-ui-react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles as createStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import Slider from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -20,7 +20,7 @@ import {
   sendMsg,
 } from "../Store/Middleware/Middleware";
 
-const useStyles = makeStyles((theme) => ({
+const Styles = createStyles((theme) => ({
   root: {
     display: "flex",
     "& > *": {
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(7),
   },
 }));
-const responsive = {
+const fullresponsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
@@ -58,7 +58,7 @@ const responsive = {
 
 function SingleProd(props)
  {
-  const classes = useStyles();
+  const classes = Styles();
   let [showNumber, setShowNumber] = useState(false);
   useEffect(() => {
     props.getData();
@@ -167,7 +167,7 @@ function SingleProd(props)
                     </div>
                     <div className="Relatedads">
                       <h3>Related ads</h3>
-                      <Slider responsive={responsive}>
+                      <Slider responsive={fullresponsive}>
                         {props.data.productData
                           ? [
                               Object.values(props.data.productData).length

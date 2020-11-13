@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Message.scss";
-// import firebase from "firebase";
+import firebase from "firebase";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
@@ -38,15 +38,15 @@ const useStyles = makeStyles((theme) => ({
  function Message(props){
   const classes = useStyles();
   let [user, setUser] = useState("");
-  // useEffect(() => {
-  //   firebase.auth().onAuthStateChanged(function (user) {
-  //     if (user) {
-  //       setUser(user);
-  //     } else {
-  //       // No user is signed in.
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        setUser(user);
+      } else {
+        // No user is signed in.
+      }
+    });
+  }, []);
   let [path, setPath] = useState("");
   let url = "";
   let [b, setB] = useState("");
@@ -61,8 +61,8 @@ const useStyles = makeStyles((theme) => ({
   }, [path,b]);
   let [recieverUser, setRecieverUser] = useState("");
   let [Message, setMessege] = useState("");
-  // let [key, setKey] = useState(firebase.database().ref("messege").push().key);
-  // console.log(b);
+  let [key, setKey] = useState(firebase.database().ref("messege").push().key);
+  console.log(b);
 
   let msgObj = {
     msg: Message,
